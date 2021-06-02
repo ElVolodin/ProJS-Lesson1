@@ -3,7 +3,7 @@
     --grey-background-header: #808080;
 }
 
-body{
+body {
     font-family: 'Lato', 'Arial', sans-serif;
     font-size: 14px;
     font-style: normal;
@@ -34,7 +34,7 @@ body{
     margin-right: 50px;
 }
 
-.btn-text{
+.btn-text {
     font-size: 16px;
     font-style: normal;
     font-weight: 300;
@@ -48,7 +48,6 @@ body{
 }
 
 .product-item {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,7 +69,7 @@ body{
     text-align: center;
 }
 
-.buy-btn{
+.buy-btn {
     width: 100px;
     min-height: 49px;
     background: var(--pink-color-button);
@@ -80,9 +79,17 @@ body{
     margin-bottom: 20px;
 }
 
-.product-img{
-    width: 350px;
-    height: 250px;
+.product-img {
+    width: 100px;
+    height: 100px;
     background-size: cover;
 }
 
+.products {
+    column-gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 150px);
+    grid-template-rows: 1fr;
+    padding: 40px 40px;
+    justify-content: space-between;
+}
