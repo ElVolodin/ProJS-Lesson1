@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Интернет-магазин</title>
-    <link href="./css/style.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <header class="cart">
-        <button class="btn-cart" type="button">
-            <p class="btn-text">Корзина</p>
-        </button>
+<div id="app">
+    <header>
+        <div class="logo">shop</div>
+        <div class="cart">
+            <form action="#" class="search-form" @submit.prevent="search">
+                <input type="text" class="search-field" v-model="userSearch">
+                <button type="submit" class="btn-search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            <button class="btn-cart" type="button" @click="showCart = !showCart">Корзина</button>
+            <div class="cart-block" v-show="showCart">
+                <p>Корзина пуста</p>
     </header>
     <main>
-        <div class="products container"></div>
+        <div class="products">
+            <div class="product-item" v-for="product of filtered" :key="product.id_product">
+                <img :src="imgProduct" alt="Need img">
+                <div class="desc">
+                    <h3>{{product.product_name}}</h3>
+                    <p>{{product.price}}</p>
+                    <button class="buy-btn">Купить</button>
+                </div>
+            </div>
+        </div>
     </main>
+</div>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/main.js"></script>
 </body>
-
 </html>
